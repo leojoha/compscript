@@ -1,11 +1,14 @@
 # Staff teams
 #define DATAENTRY "staff-dataentry"
 #define STAGE_STAFF "stage-staff"
-#define COMMENTATOR "commentator"
+#define LIVE_STREAM "live-stream"
 #define STAGE_LEAD "stage-lead"
+#define SIDE_ROOM "side-room"
 
 #define STAFF_TEAM "staff-team"
 #define SIDE_ROOM_TEAM "side-room-team"
+
+#define STREAM_ROOM "stream-room"
 
 # Stages
 #define DARK_BLUE "Dark Blue Stage"
@@ -27,7 +30,8 @@ Define("BCHall", [RED, GREEN, WHITE, ORANGE])
 Define("DEHall", [BLACK, PINK, LIGHT_BLUE, PURPLE])
 Define("IsStaff", Or(BooleanProperty(DATAENTRY),
                      BooleanProperty(STAGE_STAFF),
-                     BooleanProperty(COMMENTATOR),
+                     BooleanProperty(LIVE_STREAM),
+                     BooleanProperty(SIDE_ROOM),
                      BooleanProperty(STAGE_LEAD),
                      HasRole("organizer")))
 

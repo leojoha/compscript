@@ -8,5 +8,5 @@ Define(
     "AssignedStage",
     If(HasProperty(STAFF_TEAM, {1, Person}),
        AssignedStageForTeam(NumberProperty(STAFF_TEAM, {1, Person}), {2, Date}),
-       If(BooleanProperty(COMMENTATOR), RED, "n/a"))
+       If(BooleanProperty(LIVE_STREAM), STREAM_ROOM, "n/a"))
     )

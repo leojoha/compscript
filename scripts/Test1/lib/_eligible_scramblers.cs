@@ -1,5 +1,7 @@
+# Double check forms
+
 Define("ScrambleLimits",
-       [Tuple(_333, 20s),
+       [Tuple(_333, 17s),
         Tuple(_222, 8s),
         Tuple(_444, 1:00s),
         Tuple(_555, 1:30s),

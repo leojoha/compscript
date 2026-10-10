@@ -1,5 +1,5 @@
 #include "../../lib/_constants.cs"
-#include "../../lib/_long_room_staff.cs"
+#include "../../lib/_side_room_staff.cs"
 
 Define("CompetingTimes",
        Map(Filter(AssignedGroups({1, Person}), {2, Boolean(Group)}), StartTime()))

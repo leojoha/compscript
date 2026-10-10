@@ -43,6 +43,23 @@ const ClearWCIF = {
   }
 }
 
+
+const ClearSchedule = {
+  name: 'ClearSchedule',
+  docs: 'Remove all activities from every room in the competition schedule.',
+  args: [],
+  outputType: 'Void',
+  usesContext: true,
+  mutations: ['schedule'],
+  implementation: (ctx) => {
+    ctx.competition.schedule.venues.forEach((venue) => {
+      venue.rooms.forEach((room) => {
+        room.activities = []
+      })
+    })
+  }
+}
+
 const ImportWCIF = {
   name: 'ImportWCIF',
   docs: 'Import the WCIF from a json file',
@@ -92,5 +109,5 @@ const ExportWCIF = {
 }
 
 module.exports = {
-  functions: [ClearWCIF, ExportWCIF, ImportWCIF],
+  functions: [ClearWCIF, ClearSchedule, ExportWCIF, ImportWCIF],
 }

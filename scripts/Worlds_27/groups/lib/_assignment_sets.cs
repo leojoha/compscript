@@ -9,13 +9,13 @@ Define(
   "TopCompetitors",
   [AssignmentSet("top",
                  (PsychSheetPosition({1, Event}) <= {2, Number}),
-                 In(Stage(), AHall()),
+                 In(Stage(), HallA()),
                  featured=true)])
 
 Define(
   "EarlyAssignmentSets",
   [AssignmentSet("data", HasRole(DATAENTRY), (Stage() == YELLOW)),
-   AssignmentSet("commentators", BooleanProperty(LIVE_STREAM), (Stage() == DARK_BLUE)),
+   AssignmentSet("commentators", BooleanProperty(LIVE_STREAM), (Stage() == BLUE)),
    AssignmentSet("wca-booth", BooleanProperty(WCA_BOOTH), (Stage() == PURPLE))])
 
 # Args:
@@ -43,7 +43,7 @@ Define("RoundOneAssignmentSets",
        Concat(
          TopCompetitors({1, Event},
                         (2 * Length(Filter(Groups(RoundForEvent(1, {1, Event})),
-                                           In(Stage(Arg<Group>()), AHall()))))),
+                                           In(Stage(Arg<Group>()), HallA()))))),
          EarlyAssignmentSets(),
          StaffAssignmentSets({1, Event}, {2, Date}),
          EveryoneAssignmentSets()))
@@ -51,7 +51,7 @@ Define("RoundOneAssignmentSets",
 Define("RoundTwoAssignmentSets",
        [AssignmentSet("Top",
                       (RoundPosition(PreviousRound({1, Round})) <= 4),
-                      And(In(Stage(), AHall()), (GroupNumber() == 5)),
+                      And(In(Stage(), HallA()), (GroupNumber() == 5)),
                       featured=true),
         AssignmentSet("Five", (RoundPosition(PreviousRound({1, Round})) <= 80), (GroupNumber() == 5)),
         AssignmentSet("Four", (RoundPosition(PreviousRound({1, Round})) <= 160), (GroupNumber() == 4)),
@@ -62,10 +62,10 @@ Define("RoundTwoAssignmentSets",
 Define("SemifinalAssignmentSets",
        [AssignmentSet("Top",
                       (RoundPosition(PreviousRound({1, Round})) <= 4),
-                      In(Stage(), AHall()),
+                      In(Stage(), HallA()),
                       featured=true),
         AssignmentSet("Everyone", true, true)])
 
 Define("FinalsAssignmentSets",
-       [AssignmentSet("Evens", Even(RoundPosition(PreviousRound({1, Round}))), (Stage() == DARK_BLUE)),
+       [AssignmentSet("Evens", Even(RoundPosition(PreviousRound({1, Round}))), (Stage() == BLUE)),
         AssignmentSet("Odds", Not(Even(RoundPosition(PreviousRound({1, Round})))), (Stage() == YELLOW))])

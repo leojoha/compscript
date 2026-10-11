@@ -1,6 +1,5 @@
 #include "../lib/_constants.cs"
 #include "../lib/_side_room_staff.cs"
-
 #include "lib/_jobs.cs"
 #include "lib/_scorers.cs"
 

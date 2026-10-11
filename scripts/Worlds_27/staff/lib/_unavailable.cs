@@ -10,6 +10,8 @@ Define("MainStageCompetingTimes",
                       Not(In(Round(), [_333fm-r1, _333mbf-r1, _555bf-r1])))),
            StartTime()))
 
+# Change this later
+
 Define("Unavailable",
        Concat(
          Switch(

@@ -52,11 +52,23 @@ const ClearSchedule = {
   usesContext: true,
   mutations: ['schedule'],
   implementation: (ctx) => {
+    let maxActivityId = 0
     ctx.competition.schedule.venues.forEach((venue) => {
       venue.rooms.forEach((room) => {
+        const scan = (activities) => {
+          activities.forEach((activity) => {
+            maxActivityId = Math.max(maxActivityId, activity.id || 0)
+            scan(activity.childActivities || [])
+          })
+        }
+        scan(room.activities || [])
         room.activities = []
       })
     })
+    ctx.originalMaxActivityId = Math.max(
+      ctx.originalMaxActivityId || 0,
+      maxActivityId
+    )
   }
 }
 

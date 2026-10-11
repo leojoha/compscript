@@ -473,6 +473,25 @@ const DeleteRooms = {
   }
 }
 
+const ClearStages = {
+  name: 'ClearStages',
+  docs: 'Remove all stages from every room in the competition schedule.',
+  args: [],
+  outputType: 'Void',
+  usesContext: true,
+  mutations: ['schedule'],
+  implementation: (ctx) => {
+    ctx.competition.schedule.venues.forEach((venue) => {
+      venue.rooms.forEach((room) => {
+        const ext = extension.getExtension(room, 'Room')
+        if (ext !== null) {
+          ext.stages = []
+        }
+      })
+    })
+  },
+}
+
 const CreateMiscActivity = {
   name: 'CreateMiscActivity',
   args: [
@@ -501,7 +520,7 @@ const CreateMiscActivity = {
   usesContext: true,
   mutations: ['schedule'],
   implementation: (ctx, name, activityCode, roomName, startTime, endTime) => {
-    var maxActivityId = 0
+    var maxActivityId = ctx.originalMaxActivityId || 0
     ctx.competition.schedule.venues.forEach((venue) => {
       venue.rooms.forEach((room) => {
         room.activities.forEach((activity) => {
@@ -794,5 +813,5 @@ const DeleteGroup = {
 }
 
 module.exports = {
-  functions: [Type, IsNull, Arg, ClearCache, SetExtension, SetGroupExtension, RenameAssignments, AssignmentsBeforeCompeting, LongScrambleBlockAnalysis, CreateRoom, CreateStage, DeleteRooms, CreateMiscActivity, CreateAssignments, CreateCompetitionGroupsAssignments, ClearCompetitionGroupsAssignments, AssignmentReport, ToString, ToString_Date, SwapAssignments, DeleteAssignments, WorldsRename, DeleteGroup],
+  functions: [Type, IsNull, Arg, ClearCache, SetExtension, SetGroupExtension, RenameAssignments, AssignmentsBeforeCompeting, LongScrambleBlockAnalysis, CreateRoom, CreateStage, DeleteRooms, ClearStages, CreateMiscActivity, CreateAssignments, CreateCompetitionGroupsAssignments, ClearCompetitionGroupsAssignments, AssignmentReport, ToString, ToString_Date, SwapAssignments, DeleteAssignments, WorldsRename, DeleteGroup],
 }

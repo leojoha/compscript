@@ -125,9 +125,11 @@ async function runScript(req, res, script, filename, dryrun, clearCache) {
         params.outputs = scriptResult.outputs
         if (scriptResult.mutations.length) {
           if (dryrun) {
+            console.log('WCIF fields that would be patched:', scriptResult.mutations)
             params.dryrunWarning = true
           } else {
             ctx.logger.start('patch')
+            console.log('WCIF fields being patched:', scriptResult.mutations)
             await auth.patchWcifWithRetries(ctx.competition, scriptResult.mutations, req, res)
             ctx.logger.stop('patch')
           }

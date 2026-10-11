@@ -11,23 +11,23 @@
 #define STREAM_ROOM "stream-room"
 
 # Stages
-#define DARK_BLUE "Dark Blue Stage"
+#define BLUE "Blue Stage"
 #define YELLOW "Yellow Stage"
-#define WHITE "White Stage"
-#define ORANGE "Orange Stage"
-#define GREEN "Green Stage"
 #define RED "Red Stage"
+#define GREEN "Green Stage"
+#define ORANGE "Orange Stage"
+#define WHITE "White Stage"
 #define PURPLE "Purple Stage"
-#define LIGHT_BLUE "Light Blue Stage"
+#define BROWN "Brown Stage"
 #define PINK "Pink Stage"
 #define BLACK "Black Stage"
 #define SIDE "Side Room"
 
-Define("Stages", [DARK_BLUE, YELLOW, WHITE, ORANGE, GREEN, RED, PURPLE, LIGHT_BLUE, PINK, BLACK])
-Define("SideStages", [WHITE, ORANGE, GREEN, RED, PURPLE, LIGHT_BLUE, PINK, BLACK])
-Define("AHall", [DARK_BLUE, YELLOW])
-Define("BCHall", [RED, GREEN, WHITE, ORANGE])
-Define("DEHall", [BLACK, PINK, LIGHT_BLUE, PURPLE])
+Define("Stages", [BLUE, YELLOW, RED, GREEN, ORANGE, WHITE, PURPLE, BROWN, PINK, BLACK])
+Define("SideStages", [RED, GREEN, ORANGE, WHITE, PURPLE, BROWN, PINK, BLACK])
+Define("HallA", [BLUE, YELLOW])
+Define("HallBC", [RED, GREEN, ORANGE, WHITE])
+Define("HallDE", [PURPLE, BROWN, PINK, BLACK])
 Define("IsStaff", Or(BooleanProperty(DATAENTRY),
                      BooleanProperty(STAGE_STAFF),
                      BooleanProperty(LIVE_STREAM),

@@ -663,7 +663,7 @@ const CreateGroups = function(activityCodeType) {
     usesContext: true,
     mutations: ['schedule'],
     implementation: (ctx, activityCode, count, roomOrStage, start, end, skipGroups, useStageName, createParentIfNotPresent, extraMinutesByGroup) => {
-      var maxActivityId = 0
+      var maxActivityId = ctx.originalMaxActivityId || 0
       ctx.competition.schedule.venues.forEach((venue) => {
         venue.rooms.forEach((room) => {
           room.activities.forEach((activity) => {

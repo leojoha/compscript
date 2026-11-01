@@ -1,7 +1,5 @@
 #include "../lib/_constants.cs"
 
-# Add multi cube submission e.g.: CreateMiscActivity("Cube Submission for 3x3x3 Multi-Blind", "other-multi", SIDE, 2027-07-22T08:30, 2027-07-22T09:30)
-
 ClearSchedule()
 ClearStages()
 DeleteRooms(["Hall A", "Hall BC", "Hall DE", "Side Room"])
@@ -58,7 +56,7 @@ Map(HallBC(), CreateGroups(_333oh-r2, 1, 2027-07-22T17:15, 2027-07-22T17:35))
 Map(Stages(), CreateGroups(_clock-r2, 1, 2027-07-22T17:35, 2027-07-22T18:00))
 
     CreateMiscActivity("Opening Ceremony", "other-misc", "Hall A", 2027-07-22T18:15, 2027-07-22T19:00)
-    CreateMiscActivity("Nations Cup", "other-misc", "Hall A", 2027-07-22T19:00, 2027-07-22T20:30)
+    CreateMiscActivity("MoYu Nations Cup", "other-misc", "Hall A", 2027-07-22T19:00, 2027-07-22T20:30)
 
 # Friday
 
@@ -74,8 +72,12 @@ Map(Stages(), CreateGroups(_pyram-r2, 1, 2027-07-23T11:30, 2027-07-23T11:50))
     CreateMiscActivity("Lunch", "other-lunch", "Hall A", 2027-07-23T11:50, 2027-07-23T12:50)
 
 Map(HallA(), CreateGroups(_444-r1, 5, 2027-07-23T12:50, 2027-07-23T14:40))
-Map(HallBC(), CreateGroups(_444-r1, 9, 2027-07-23T11:50:01, 2027-07-23T15:50, [], true, true, [Tuple(1, 60)]))
-Map(HallDE(), CreateGroups(_444-r1, 9, 2027-07-23T11:50:01, 2027-07-23T15:50, [], true, true, [Tuple(2, 60)]))
+Map(HallBC(), CreateGroups(_444-r1, 1, 2027-07-23T11:50:01, 2027-07-23T12:10))
+Map(HallDE(), CreateGroups(_444-r1, 2, 2027-07-23T11:50:02, 2027-07-23T12:30))
+    CreateMiscActivity("Lunch", "other-lunch", "Hall BC", 2027-07-23T12:10, 2027-07-23T13:10)
+    CreateMiscActivity("Lunch", "other-lunch", "Hall DE", 2027-07-23T12:30, 2027-07-23T13:30)
+Map(HallBC(), CreateGroups(_444-r1, 8, 2027-07-23T13:10, 2027-07-23T15:50))
+Map(HallDE(), CreateGroups(_444-r1, 7, 2027-07-23T13:30, 2027-07-23T15:50))
 
 Map(HallA(), CreateGroups(_sq1-r1, 4, 2027-07-23T14:40, 2027-07-23T16:00))
 Map(SideStages(), CreateGroups(_sq1-r1, 2, 2027-07-23T15:50, 2027-07-23T16:25))
@@ -107,8 +109,12 @@ Map(Stages(), CreateGroups(_222-r2, 1, 2027-07-24T11:40, 2027-07-24T12:00))
     CreateMiscActivity("Lunch", "other-lunch", "Hall A", 2027-07-24T12:00, 2027-07-24T13:00)
 
 Map(HallA(), CreateGroups(_333-r1, 6, 2027-07-24T13:00, 2027-07-24T14:45))
-Map(HallBC(), CreateGroups(_333-r1, 11, 2027-07-24T12:00:01, 2027-07-24T16:05, [], true, true, [Tuple(1, 60)]))
-Map(HallDE(), CreateGroups(_333-r1, 11, 2027-07-24T12:00:01, 2027-07-24T16:05, [], true, true, [Tuple(2, 60)]))
+Map(HallBC(), CreateGroups(_333-r1, 1, 2027-07-24T12:00:01, 2027-07-24T12:15))
+Map(HallDE(), CreateGroups(_333-r1, 2, 2027-07-24T12:00:02, 2027-07-24T12:30))
+    CreateMiscActivity("Lunch", "other-lunch", "Hall BC", 2027-07-24T12:15, 2027-07-24T13:15)
+    CreateMiscActivity("Lunch", "other-lunch", "Hall DE", 2027-07-24T12:30, 2027-07-24T13:30)
+Map(HallBC(), CreateGroups(_333-r1, 10, 2027-07-24T13:15:01, 2027-07-24T16:05))
+Map(HallDE(), CreateGroups(_333-r1, 9, 2027-07-24T13:30:01, 2027-07-24T16:05))
 
 Map(HallA(), CreateGroups(_777-r1, 2, 2027-07-24T14:45, 2027-07-24T15:40))
 Map(SideStages(), CreateGroups(_777-r1, 1, 2027-07-24T16:05, 2027-07-24T16:30))
@@ -161,10 +167,12 @@ Map(HallA(), CreateGroups(_333-r4, 8, 2027-07-25T16:15, 2027-07-25T17:55))
 
     # Side Room Schedule
 
-CreateGroups(_555bf-r1, 1, SIDE, 2027-07-22T09:00:02, 2027-07-22T10:10)
+    CreateMiscActivity("Cube Submission for 3x3x3 Multi-Blind", "other-multi", SIDE, 2027-07-22T10:40, 2027-07-22T11:40)
+CreateGroups(_555bf-r1, 1, SIDE, 2027-07-22T09:05, 2027-07-22T10:10)
 CreateGroups(_333mbf-r1-a1, 1, SIDE, 2027-07-22T15:00, 2027-07-22T16:20, useStageName=false)
 CreateGroups(_333fm-r1-a1, 1, SIDE, 2027-07-23T09:05, 2027-07-23T10:20, useStageName=false)
 CreateGroups(_333fm-r1-a2, 1, SIDE, 2027-07-23T12:50, 2027-07-23T14:05, useStageName=false)
 CreateGroups(_333fm-r1-a3, 1, SIDE, 2027-07-23T14:05, 2027-07-23T15:20, useStageName=false)
+    CreateMiscActivity("Cube Submission for 3x3x3 Multi-Blind", "other-multi", SIDE, 2027-07-24T08:45, 2027-07-24T09:45)
 CreateGroups(_333mbf-r1-a2, 1, SIDE, 2027-07-24T14:20, 2027-07-24T15:40, useStageName=false)
-CreateGroups(_444bf-r1, 1, SIDE, 2027-07-25T09:00:02, 2027-07-25T09:45)
+CreateGroups(_444bf-r1, 1, SIDE, 2027-07-25T09:05, 2027-07-25T09:45)

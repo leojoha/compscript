@@ -38,3 +38,4 @@ Define("IsStaff", Or(BooleanProperty(DATAENTRY),
 # Other roles
 #define WCA_BOARD "wca-board"
 #define WCA_BOOTH "wca-booth"
+#define REG "registration"

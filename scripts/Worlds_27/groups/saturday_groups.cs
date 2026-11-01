@@ -10,8 +10,7 @@ Define("MultiOverlap", And((EndTime() > 2027-07-24T15:40), (StartTime() < 2027-0
 
 AssignGroups(_skewb-r1,
              RoundOneAssignmentSets(_skewb, 2027-07-24),
-             Concat(DefaultScorers(2027-07-24, _skewb),
-                    [ByFilters(StaffingSaturdayMulti(Arg<Person>())), (GroupNumber() > 5), 10]))
+             DefaultScorers(2027-07-24, _skewb))
 
 AssignGroups(_333-r1,
              RoundOneAssignmentSets(_333, 2027-07-24),

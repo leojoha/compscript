@@ -1,7 +1,7 @@
 #include "../lib/_constants.cs"
 
 Table(
-    Persons(BooleanProperty(CORE_STAFF)),
+    Persons(BooleanProperty(STAGE_STAFF)),
     [
       Column("Name", Name()),
       Column("Team", NumberProperty(STAFF_TEAM)),

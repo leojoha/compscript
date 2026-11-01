@@ -21,14 +21,14 @@ Define("Unavailable",
              Tuple(2015PADG01, [UnavailableBetween(2024-07-19T20:53, 2024-07-20T20:52)])],  # Dalton Padgett
            defaultValue=[]),
          If(StaffingThursdayMulti(Arg<Person>()),
-            [UnavailableBetween(2024-07-18T14:00, 2024-07-18T14:15), # Change hand-in time
+            [UnavailableBetween(2024-07-18T10:40, 2024-07-18T11:40), 
              UnavailableBetween(2027-07-22T15:00, 2027-07-22T16:20)], []),
          If(StaffingFridayFMC(Arg<Person>()),
             [UnavailableBetween(2027-07-23T09:05, 2027-07-23T10:20),
              UnavailableBetween(2027-07-23T12:50, 2027-07-23T14:05),
              UnavailableBetween(2027-07-23T14:05, 2027-07-23T15:20)], []),
          If(StaffingSaturdayMulti(Arg<Person>()),
-            [UnavailableBetween(2024-07-18T09:30, 2024-07-18T12:15), # Change hand-in time
+            [UnavailableBetween(2024-07-18T08:45, 2024-07-18T09:45), 
              UnavailableBetween(2027-07-24T14:20, 2027-07-24T15:40)], []),
          If(StaffingThursday5BLD(Arg<Person>()),
             [UnavailableBetween(2027-07-22T09:00, 2027-07-22T10:15)], []),

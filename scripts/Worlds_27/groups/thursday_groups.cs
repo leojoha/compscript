@@ -12,8 +12,8 @@ Define("MultiOverlap", And((EndTime() > 2027-07-22T16:20), (StartTime() < 2027-0
 AssignGroups(_333oh-r1,
              RoundOneAssignmentSets(_333oh, 2027-07-22),
              Concat(DefaultScorers(2027-07-22, _333oh),
-                    [ByFilters(Or(CompetingIn(_555bf),
-                                  StaffingThursdayMulti(Arg<Person>())), FiveblindOverlap(Arg<Group>()), -20),
+                    [ByFilters(CompetingIn(_555bf),
+                                  FiveblindOverlap(Arg<Group>()), -20),
                      ByFilters(BooleanProperty(WCA_BOARD), (GroupNumber() == 1), 10),
                      ByFilters((Arg<Person>() == 2015KUCA01), (GroupNumber() == 1), 10)]))
 
